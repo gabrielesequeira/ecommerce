@@ -41,13 +41,13 @@ Conceitos Usados:
 Mapeamento Objeto-Relacional (ORM) para vincular classes Python a tabelas no banco de dados.
 Estruturas de dados, como listas e dicionários, para representar registros em memória.
 4. backend/routes.py
-Descrição: Define as rotas da API, conectando as requisições do cliente à lógica do back-end.
+Descrição: Define as rotas da API, conectando as requisições do cliente à lógica do back-end, onde as informações serão enviadas em formato JSON visto que é de facil manipulação em JavaScript
 Tecnologias Usadas:
 Flask (Blueprints para modularizar rotas).
 Conceitos Usados:
 APIs RESTful para comunicação eficiente entre front-end e back-end.
 Lógica de controle para validar e processar requisições.
-5. backend/__init__.py
+5. backend/init.py
 Descrição: Faz o diretório backend ser reconhecido como um módulo Python, permitindo importações organizadas.
 Tecnologias Usadas:
 Python.
