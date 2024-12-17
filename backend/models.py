@@ -1,19 +1,15 @@
-# modelos do banco de dados
+from backend.database import db
 
-# backend/models.py
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
-
+# Tabela de produtos
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-    price = db.Column(db.Float)
+    name = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+    description = db.Column(db.String(200))
+    category = db.Column(db.String(50))
 
-class Cart(db.Model):
+# Tabela de itens no carrinho
+class CartItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
-    quantity = db.Column(db.Integer)
-
-    product = db.relationship('Product')
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    quantity = db.Column(db.Integer, default=1)

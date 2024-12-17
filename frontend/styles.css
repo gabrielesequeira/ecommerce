@@ -1,12 +1,26 @@
-/* estilos do frontend */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    margin: 20px;
+    background-color: #f9f9f9;
 }
 
-h1 {
+h1, h2 {
     color: #333;
+}
+
+#product-list, #cart {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
