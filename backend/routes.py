@@ -1,6 +1,6 @@
 from flask import request, jsonify
-from backend.models import Product, CartItem
-from backend.database import db
+from models import Product, CartItem
+from database import db
 
 def configure_routes(app):
     # Rota para listar todos os produtos
