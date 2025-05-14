@@ -12,11 +12,11 @@ class Product(db.Model):
 
 class CartItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False) #Ligado a tabela de product
     quantity = db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Novo
-    product = db.relationship('Product', backref='cart_items')
-    user = db.relationship('User', backref='cart_items')  # Relacionamento reverso
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Ligado a tebela de User
+    product = db.relationship('Product', backref='cart_items') # objeto python para consulta de seus atributos product.name
+    user = db.relationship('User', backref='cart_items')  # objeto python para consulta tbm
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

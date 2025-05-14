@@ -1,145 +1,35 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Corpo da página */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background-color: #f0f0f0;
+}
+
+h1, h2 {
   color: #333;
-  line-height: 1.6;
-  padding: 20px;
 }
 
-h1 {
-  text-align: center;
-  color: #4CAF50;
-  font-size: 2.5em;
-  margin-bottom: 30px;
+input {
+  margin: 5px;
+  padding: 8px;
 }
 
-h2 {
-  color: #333;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-/* Seção de login e cadastro */
-#auth-section {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 30px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#auth-section input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-#auth-section button {
-  width: 100%;
-  padding: 10px;
+button {
+  padding: 8px 12px;
+  margin: 5px;
   background-color: #4CAF50;
-  border: none;
   color: white;
-  font-size: 1.1em;
+  border: none;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-#auth-section button:hover {
+button:hover {
   background-color: #45a049;
 }
 
 hr {
   margin: 30px 0;
-  border: 0;
-  border-top: 2px solid #ddd;
 }
 
-/* Seção de produtos */
-#products-section {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-#product-list {
-  list-style: none;
-}
-
-#product-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#product-list li button {
-  padding: 5px 10px;
-  background-color: #FF5733;
-  border: none;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#product-list li button:hover {
-  background-color: #e64a2d;
-}
-
-/* Seção do carrinho */
-#cart-section {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-#cart-list {
-  list-style: none;
-}
-
-#cart-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  #auth-section,
-  #products-section,
-  #cart-section {
-    width: 100%;
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.3em;
-  }
+#product-list li, #cart-list li {
+  margin: 10px 0;
 }

@@ -1,23 +1,19 @@
-from flask import request, jsonify
-from models import Product, CartItem
+from flask import request, jsonify, session, render_template
 from database import db
 from models import Product, CartItem, User
-from flask import session
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-
-
-
 def configure_routes(app):
-    # Rota para listar todos os produtos
+    # Rota para listar PRODUTOS
     @app.route('/products', methods=['GET'])
     def get_products():
         products = Product.query.all()
         result = [{"id": p.id, "name": p.name, "price": p.price, "description": p.description, "category": p.category} for p in products]
         return jsonify(result)
 
+    # CARRINHO - Adicionar item
     @app.route('/cart', methods=['POST'])
     @login_required
     def add_to_cart():
@@ -31,7 +27,7 @@ def configure_routes(app):
 
         return jsonify({"message": "Item adicionado ao carrinho!"}), 201
 
-
+    # CARRINHO - Visualizar
     @app.route('/cart', methods=['GET'])
     @login_required
     def view_cart():
@@ -46,32 +42,33 @@ def configure_routes(app):
         ]
         return jsonify(result)
 
-
-
-    # REGISTRO
-    @app.route('/register', methods=['POST'])
+    # REGISTRO - GET (formulário) e POST (cadastro)
+    @app.route('/register', methods=['GET', 'POST'])
     def register():
+        if request.method == 'GET':
+            return render_template('register.html')
+
         data = request.get_json()
         email = data.get('email')
         password = data.get('password')
+        name = data.get('name')
 
         if User.query.filter_by(email=email).first():
             return jsonify({'message': 'Usuário já existe'}), 400
 
         hashed_password = generate_password_hash(password)
-        new_user = User(email=email, password=hashed_password)
+        new_user = User(email=email, password=hashed_password, name=name)
         db.session.add(new_user)
         db.session.commit()
+
         return jsonify({"message": "Usuário registrado com sucesso!"}), 201
-# /register:
-# - Verifica se o email já existe
-# - Cria novo usuário com senha criptografada
-# - Salva no banco
 
-
-    # LOGIN
-    @app.route('/login', methods=['POST'])
+    # LOGIN - GET (formulário) e POST (autenticação)
+    @app.route('/login', methods=['GET', 'POST'])
     def login():
+        if request.method == 'GET':
+            return render_template('login.html')
+
         data = request.get_json()
         email = data.get('email')
         password = data.get('password')
@@ -83,14 +80,9 @@ def configure_routes(app):
         login_user(user)
         return jsonify({"message": "Login realizado com sucesso!"})
 
-# /login:
-# - Busca o usuário pelo email
-# - Verifica se a senha está correta usando hash
-# - Retorna sucesso ou erro
-
     # LOGOUT
     @app.route('/logout', methods=['POST'])
     @login_required
     def logout():
         logout_user()
-        return jsonify({"message": "Logout realizado com sucesso!"})
+        return render_template('logout.html')
