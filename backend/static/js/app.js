@@ -1,48 +1,91 @@
-// Carregar lista de produtos
+
+let csrf_token = '';
+
+async function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    const res = await fetch('/login', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({username, password})
+    });
+
+    if (res.ok) {
+    alert('Login realizado!');
+    loadProducts();
+    loadCart();
+    } else {
+    alert('Falha no login.');
+    }
+}
+
+async function register() {
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+
+    const res = await fetch('/register', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({username, password})
+    });
+
+    if (res.ok) {
+    alert('Cadastro feito com sucesso!');
+    } else {
+    alert('Erro no cadastro.');
+    }
+}
+
 async function loadProducts() {
-    const response = await fetch('/products');
-    const products = await response.json();
+    const res = await fetch('/products');
+    const data = await res.json();
 
-    const productList = document.getElementById('product-list');
-    productList.innerHTML = '';
-
-    products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.innerHTML = `
-            <h3>${product.name} - R$${product.price.toFixed(2)}</h3>
-            <p>${product.description}</p>
-            <button onclick="addToCart(${product.id})">Adicionar ao Carrinho</button>
-        `;
-        productList.appendChild(productElement);
+    const list = document.getElementById('product-list');
+    list.innerHTML = '';
+    data.forEach(p => {
+    const item = document.createElement('li');
+    item.innerHTML = `${p.name} - R$ ${p.price.toFixed(2)} 
+        <button onclick="addToCart(${p.id})">Adicionar ao carrinho</button>`;
+    list.appendChild(item);
     });
 }
 
-// Adicionar item ao carrinho
-async function addToCart(productId) {
-    await fetch('/cart', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ product_id: productId, quantity: 1 })
+async function addToCart(product_id) {
+    const res = await fetch('/cart', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({product_id, quantity: 1})
     });
 
-    alert('Item adicionado ao carrinho!');
-    await loadCart();  // Aguarda o carregamento do carrinho após adicionar o item
+    if (res.ok) {
+    alert('Adicionado ao carrinho!');
+    loadCart();
+    } else {
+    alert('Erro ao adicionar.');
+    }
 }
 
-
-// Carregar carrinho
 async function loadCart() {
-    const response = await fetch('/cart');
-    const cart = await response.json();
+    const res = await fetch('/cart');
+    const list = document.getElementById('cart-list');
+    list.innerHTML = '';
 
-    const cartDiv = document.getElementById('cart');
-    cartDiv.innerHTML = '';
+    if (res.status === 401) {
+    list.innerHTML = '<li>Você precisa estar logado para ver o carrinho.</li>';
+    return;
+    }
 
-    cart.forEach(item => {
-        cartDiv.innerHTML += `<p>Produto ID: ${item.product_id}, Quantidade: ${item.quantity}</p>`;
+    const data = await res.json();
+    data.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.product_name} - Quantidade: ${item.quantity} - Total: R$ ${(item.quantity * item.price).toFixed(2)}`;
+    list.appendChild(li);
     });
 }
 
-// Carregar dados ao iniciar
-loadProducts();
-loadCart();
+// Auto carregar produtos
+window.onload = () => {
+    loadProducts();
+    loadCart();
+};
