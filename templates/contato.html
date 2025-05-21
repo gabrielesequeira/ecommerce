@@ -1,23 +1,24 @@
 <!-- templates/contato.html -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contato</title>
-</head>
-<body>
-    <h1>Formulário de Contato</h1>
-    {% if enviado %}
-        <p>Mensagem enviada com sucesso!</p>
-    {% endif %}
-    <form method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required>
-        <br>
-        <label for="mensagem">Mensagem:</label>
-        <textarea name="mensagem" required></textarea>
-        <br>
-        <button type="submit">Enviar</button>
-    </form>
-    <a href="/">Voltar</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Contato{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Entre em contato</h2>
+
+        {% if enviado %}
+            <p class="success">Mensagem enviada com sucesso!</p>
+        {% endif %}
+
+        <form method="POST" class="form-contato">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+{% endblock %}
