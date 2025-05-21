@@ -78,3 +78,23 @@ button:hover {
     font-weight: bold;
     margin-bottom: 1rem;
 }
+.senha-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.senha-container input {
+    flex: 2;
+    padding-right: 30px;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.2rem;
+    background-color: #9b2c2c;
+}

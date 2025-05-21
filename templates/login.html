@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Entrar</h2>
+    <form method="POST" class="form-contato">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <div class="senha-container">
+            <input type="password" name="senha" required>
+            <span class="toggle-senha">👁️</span>
+        </div>
+
+        <button type="submit">Entrar</button>
+    </form>
+</section>
+{% endblock %}

@@ -16,13 +16,19 @@ def sobre():
 @myblue.route('/contato', methods=['GET', 'POST'])
 def contato():
     if request.method == 'POST':
-        #se o form for enviado
-        nome = request.form.get('nome')
-        mensagem = request.form.get('mensagem')
-        # Aqui poderia salvar no banco, mas vamos só exibir no console
-        print(f"Mensagem recebida de {nome}: {mensagem}")
-        return render_template('contato.html', enviado=True)
-        #Recarrega a mesma página mas agora com a variável 'enviado=True' para exibir uma confirmação
-        
+        enviado = True #msg enviada
     return render_template('contato.html', enviado=False)
     # Se for apenas GET (acesso comum), mostra o formulário normalmente
+
+
+@myblue.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+@myblue.route('/produtos')
+def produtos():
+    return render_template('produtos.html')
+
+@myblue.route('/carrinho')
+def carrinho():
+    return render_template('carrinho.html')
