@@ -3,8 +3,82 @@
 {% block title %}Produtos{% endblock %}
 
 {% block content %}
-<section>
-    <h2>Nossos Produtos</h2>
-    <p>Catálogo de produtos em breve...</p>
+<section class="promocao-banner">
+    <h2>Super Promoções da Semana!</h2>
+    <p>Descontos de até <strong>50%</strong> em diversos produtos! Aproveite frete grátis nas compras acima de R$ 150,00.</p>
+    <p><em>Válido até domingo. Corre que tá acabando!</em></p>
 </section>
+
+
+<section class="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="grid-produtos">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img1.jpg') }}" alt="Produto 1">
+            <h3>Produto 1</h3>
+            <p>Descrição do produto 1.</p>
+            <button>Comprar</button>
+        </div>
+        <!-- Produto 2 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img2.jpg') }}" alt="Produto 2">
+            <h3>Produto 2</h3>
+            <p>Descrição do produto 2.</p>
+            <button>Comprar</button>
+        </div>
+        <!-- Produto 3 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img3.jpg') }}" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição do produto 3.</p>
+            <button>Comprar</button>
+        </div>
+        <!-- Produto 4 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img4.jpg') }}" alt="Produto 4">
+            <h3>Produto 4</h3>
+            <p>Descrição do produto 4.</p>
+            <button>Comprar</button>
+        </div>
+        <!-- Produto 5 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img5.jpg') }}" alt="Produto 5">
+            <h3>Produto 5</h3>
+            <p>Descrição do produto 5.</p>
+            <button>Comprar</button>
+        </div>
+        <!-- Produto 6 -->
+        <div class="produto-card">
+            <img src="{{ url_for('static', filename='img/img6.jpg') }}" alt="Produto 6">
+            <h3>Produto 6</h3>
+            <p>Descrição do produto 6.</p>
+            <button>Comprar</button>
+        </div>
+    </div>
+</section>
+
+<section class="outra-sessao">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="depoimentos">
+        <div class="depoimento-card">
+            <p>"Produtos incríveis! Chegaram super rápido e a qualidade é excelente."</p>
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <p><strong>– Ana Souza</strong></p>
+        </div>
+
+        <div class="depoimento-card">
+            <p>"Amei o atendimento e os preços! Com certeza comprarei novamente."</p>
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <p><strong>– Lucas Pereira</strong></p>
+        </div>
+
+        <div class="depoimento-card">
+            <p>"Variedade enorme de produtos, muito satisfeita com minha compra."</p>
+            <div class="estrelas">⭐⭐⭐⭐⭐</div>
+            <p><strong>– Mariana Lima</strong></p>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
