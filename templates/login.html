@@ -3,17 +3,19 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<section>
+<section class="form-section">
     <h2>Entrar</h2>
     <form method="POST" class="form-contato">
         <label for="email">Email:</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" id="email" required>
 
         <label for="senha">Senha:</label>
         <div class="senha-container">
-            <input type="password" name="senha" required>
-            <span class="toggle-senha">👁️</span>
+            <input type="password" name="senha" id="senha" required>
+            <span class="toggle-senha" onclick="toggleSenha()">👁️</span>
         </div>
+
+
 
         <button type="submit">Entrar</button>
     </form>

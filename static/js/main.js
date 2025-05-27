@@ -1,29 +1,12 @@
-// static/js/main.js
+function toggleSenha() {
+    const senhaInput = document.getElementById('senha');
+    const toggleButton = document.querySelector('.toggle-senha');
 
-// 1. na página contato.html
-document.addEventListener('DOMContentLoaded', function () { //código executado depois que o html é carregado evitando erros ao acessar elementos que ainda não existem
-    const form = document.querySelector('.form-contato'); //armazena o form da página contato em uma variavel form
-    if (form) {
-        form.addEventListener('submit', function () { 
-            alert('Sua mensagem foi enviada!'); // envia um alerta caso encontrado e submetido
-        });
+    if (senhaInput.type === 'password') {
+        senhaInput.type = 'text';
+        toggleButton.innerHTML = '🙈'; // Mostrando senha
+    } else {
+        senhaInput.type = 'password';
+        toggleButton.innerHTML = '👁️'; // Escondendo senha
     }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const senhaInput = document.querySelector('input[name="senha"]');
-        const toggle = document.querySelector('.toggle-senha');
-
-        if (senhaInput && toggle) {
-            toggle.addEventListener('click', function () {
-                const isPassword = senhaInput.type === 'password';
-                senhaInput.type = isPassword ? 'text' : 'password';
-                toggle.textContent = isPassword ? '👁️‍🗨️' : '👁️';
-            });
-        }
-    });
-
-
-
-
-
-});
+}
