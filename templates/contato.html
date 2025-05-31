@@ -1,24 +1,23 @@
-<!-- templates/contato.html -->
 {% extends 'base.html' %}
 
 {% block title %}Contato{% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Entre em contato</h2>
+<section class="contato-section">
+    <h2>Entre em contato conosco</h2>
 
-        {% if enviado %}
-            <p class="success">Mensagem enviada com sucesso!</p>
-        {% endif %}
+    {% if enviado %}
+        <p class="success">Mensagem enviada com sucesso!</p>
+    {% endif %}
 
-        <form method="POST" class="form-contato">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" required>
+    <form method="POST" class="form-contato">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea name="mensagem" rows="5" required></textarea>
+        <label for="mensagem">Mensagem:</label>
+        <textarea name="mensagem" id="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+</section>
 {% endblock %}

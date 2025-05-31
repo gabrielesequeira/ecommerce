@@ -1,20 +1,33 @@
-/* static/style.css */
+/* Variáveis globais */
+:root {
+    --primary-color: #8db8e2;       /* azul vibrante */
+    --secondary-color: #1e1e2f;     /* azul escuro quase preto */
+    --accent-color: #ff6f61;        /* vermelho coral */
+    --background-color: #f4f7fc;    /* cinza claro */
+    --text-color: #333333;          /* cinza escuro */
+    --input-background: #ffffff;    /* branco */
+    --input-border: #cccccc;        /* cinza claro */
+    --success-color: #28a745;       /* verde para sucesso */
+}
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f9fa;
-    color: #333;
+    color: var(--text-color);
+}
+
+h1, h2 {
+    color: var(--primary-color);
 }
 
 header {
-    background-color: #004080;
+    background-color: #004080; /* tom de azul escuro */
     color: white;
     padding: 1rem;
     text-align: center;
 }
-
 
 nav {
     margin-top: 0.5rem;
@@ -43,42 +56,139 @@ footer {
     background-color: #eee;
 }
 
-h1, h2 {
-    color: #b5d5f5;
-}
-
-
-
-
-/* css login */
-.form-section {
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-
-.form-section h2 {
+.hero {
+    height: 50vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-bottom: 25px;
-    color: #003366;
+    padding: 0 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(10, 116, 218, 0.4);
 }
 
-.form-contato label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
+.hero-content {
+    max-width: 600px;
 }
 
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #d1d9e6cc;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 45px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(255,111,97,0.6);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #e85b4d;
+    transform: scale(1.05);
+}
+
+.form-contato,
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: inherit;
+}
+
+.form-contato label,
+.form-section label {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--secondary-color);
+}
+
+.form-contato input[type="text"],
 .form-contato input[type="email"],
-.form-contato input[type="password"] {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+.form-contato input[type="password"],
+.form-contato textarea,
+.form-section input[type="email"],
+.form-section input[type="password"] {
+    padding: 12px 15px;
+    border: 2px solid var(--input-border);
     border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-background);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    font-family: inherit;
+    min-height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-contato input[type="text"]:focus,
+.form-contato input[type="email"]:focus,
+.form-contato input[type="password"]:focus,
+.form-contato textarea:focus,
+.form-section input[type="email"]:focus,
+.form-section input[type="password"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    outline: none;
+}
+
+.btn-enviar,
+button,
+.btn-primary {
+    cursor: pointer;
+}
+
+.btn-enviar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(10, 116, 218, 0.4);
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+}
+
+button {
+    width: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0055aa;
 }
 
 .senha-container {
@@ -86,18 +196,18 @@ h1, h2 {
     justify-content: space-between;
     align-items: center;
     padding: 5px 10px;
-    gap: 10px; /* espaçamento opcional */
+    gap: 10px;
 }
 
 .senha-container input {
-    width: 100%; /* ocupa todo o espaço disponível, mas não depende do span */
-    max-width: 300px; /* limite opcional */
+    flex-grow: 1;
     border: none;
     color: white;
     font-size: 16px;
     padding: 8px;
     border-radius: 4px;
     box-sizing: border-box;
+    max-width: 300px;
 }
 
 .toggle-senha {
@@ -107,7 +217,8 @@ h1, h2 {
     background-color: red;
     padding: 5px 8px;
     border-radius: 4px;
-    flex-shrink: 0; /* impede que o span diminua */
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .toggle-senha:hover {
@@ -115,47 +226,35 @@ h1, h2 {
     background-color: darkred;
 }
 
-
-button {
-    width: 100%;
-    background-color: #003366;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.contato-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    color: var(--text-color);
 }
 
-button:hover {
-    background-color: #0055aa;
-}
-
-
-/*css produtos 
-
-.promocao-banner {
-    background: linear-gradient(90deg, #ff4d4d, #ff9900);
-    color: white;
-    padding: 30px 20px;
+.contato-section h2 {
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    margin-bottom: 40px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
-.promocao-banner h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.success {
+    background-color: var(--success-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
 }
 
-.promocao-banner p {
-    font-size: 1.1em;
-    margin: 5px 0;
-}
-
-
-/* Sessões gerais */
 section {
     margin: 40px 0;
     padding: 20px;
@@ -163,14 +262,12 @@ section {
     border-radius: 8px;
 }
 
-/* Grid dos produtos */
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* Card de cada produto */
 .produto-card {
     background-color: white;
     border-radius: 8px;
@@ -213,27 +310,11 @@ section {
     background-color: #003f7d;
 }
 
-/* Carrossel e outras seções */
 .carrossel, .outra-sessao {
     background-color: #e2e2e2;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-    .grid-produtos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .grid-produtos {
-        grid-template-columns: 1fr;
-    }
-}
-
-
 .outra-sessao {
-    background-color: #f8f8f8;
     padding: 30px;
     border-radius: 10px;
 }
@@ -259,3 +340,36 @@ section {
     font-size: 20px;
     margin: 10px 0;
 }
+
+@media (max-width: 900px) {
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .contato-section {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .senha-container input {
+        max-width: 100%;
+    }
+}
+
+

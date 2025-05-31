@@ -9,9 +9,6 @@ myblue = Blueprint('routes', __name__) #cria o grupo de rotas
 def home():
     return render_template('index.html')
 
-@myblue.route('/sobre')
-def sobre():
-    return render_template('sobre.html')
 
 @myblue.route('/contato', methods=['GET', 'POST'])
 def contato():
