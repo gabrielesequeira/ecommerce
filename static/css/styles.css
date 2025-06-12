@@ -1,20 +1,25 @@
-/* Variáveis globais */
+/* =========================
+   VARIÁVEIS GLOBAIS
+========================= */
 :root {
-    --primary-color: #8db8e2;       /* azul vibrante */
-    --secondary-color: #1e1e2f;     /* azul escuro quase preto */
-    --accent-color: #ff6f61;        /* vermelho coral */
-    --background-color: #f4f7fc;    /* cinza claro */
-    --text-color: #333333;          /* cinza escuro */
-    --input-background: #ffffff;    /* branco */
-    --input-border: #cccccc;        /* cinza claro */
-    --success-color: #28a745;       /* verde para sucesso */
+    --primary-color: #8db8e2;         
+    --secondary-color: #1e1e2f;       
+    --accent-color: #ff6f61;          
+    --background-color: #2e343d;      
+    --text-color: #dadcec;            
+    --input-background: #3f3232;      
+    --input-border: #423737;          
+    --success-color: #28a745;         
 }
 
+/* =========================
+   BASE E TIPOGRAFIA
+========================= */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #42474b;
     color: var(--text-color);
 }
 
@@ -22,9 +27,12 @@ h1, h2 {
     color: var(--primary-color);
 }
 
+/* =========================
+   HEADER E NAVEGAÇÃO
+========================= */
 header {
-    background-color: #004080; /* tom de azul escuro */
-    color: white;
+    background-color: #004080;
+    color: var(--text-color);
     padding: 1rem;
     text-align: center;
 }
@@ -34,32 +42,37 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: var(--text-color);
     margin: 0 1rem;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* =========================
+   PRINCIPAL E SEÇÕES
+========================= */
 main {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 1rem;
-    background: white;
+    background: #42474b;
     border-radius: 8px;
-    box-shadow: 0 0 10px #ccc;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    background-color: #eee;
+section {
+    margin: 0;
+    padding: 0px;
+    background-color: #42474b;
+    border-radius: 8px;
 }
 
-.hero {
+/* =========================
+   inicio.html
+========================= */
+.inicio-section {
     height: 50vh;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,37 +82,47 @@ footer {
     box-shadow: 0 8px 30px rgba(10, 116, 218, 0.4);
 }
 
-.hero-content {
+.inicio-div {
     max-width: 600px;
 }
 
-.hero-content h1 {
+.inicio-div h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     font-weight: 900;
     line-height: 1.1;
 }
 
-.hero-content p {
+.inicio-div p {
     font-size: 1.3rem;
     margin-bottom: 40px;
     color: #d1d9e6cc;
     font-weight: 500;
 }
 
+/* =========================
+   BOTÕES
+========================= */
+.btn-primary,
+.btn-enviar,
+button {
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
 .btn-primary {
     background-color: var(--accent-color);
     color: white;
     padding: 15px 45px;
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
     font-size: 1.1rem;
-    box-shadow: 0 6px 20px rgba(255,111,97,0.6);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
     display: inline-block;
-    border: none;
-    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 50px;
 }
 
 .btn-primary:hover {
@@ -107,6 +130,35 @@ footer {
     transform: scale(1.05);
 }
 
+.btn-enviar {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(10, 116, 218, 0.4);
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+}
+
+button {
+    width: 100%;
+    background-color: #003366;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+/* =========================
+   CONTATO
+========================= */
 .form-contato,
 .form-section form {
     display: flex;
@@ -120,7 +172,7 @@ footer {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 6px;
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .form-contato input[type="text"],
@@ -142,97 +194,24 @@ footer {
     box-sizing: border-box;
 }
 
-.form-contato input[type="text"]:focus,
-.form-contato input[type="email"]:focus,
-.form-contato input[type="password"]:focus,
+.form-contato input:focus,
 .form-contato textarea:focus,
-.form-section input[type="email"]:focus,
-.form-section input[type="password"]:focus {
+.form-section input:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 8px var(--primary-color);
     outline: none;
 }
 
-.btn-enviar,
-button,
-.btn-primary {
-    cursor: pointer;
-}
-
-.btn-enviar {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 12px rgba(10, 116, 218, 0.4);
-    width: 100%;
-}
-
-.btn-enviar:hover {
-    background-color: var(--accent-color);
-    box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
-}
-
-button {
-    width: 100%;
-    background-color: #003366;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0055aa;
-}
-
-.senha-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    gap: 10px;
-}
-
-.senha-container input {
-    flex-grow: 1;
-    border: none;
-    color: white;
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    max-width: 300px;
-}
-
-.toggle-senha {
-    cursor: pointer;
-    font-size: 20px;
-    user-select: none;
-    background-color: red;
-    padding: 5px 8px;
-    border-radius: 4px;
-    flex-shrink: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.toggle-senha:hover {
-    color: #0055aa;
-    background-color: darkred;
-}
-
+/* =========================
+   CONTATO
+========================= */
 .contato-section {
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
     background-color: var(--background-color);
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     color: var(--text-color);
 }
 
@@ -246,7 +225,7 @@ button:hover {
 
 .success {
     background-color: var(--success-color);
-    color: white;
+    color: var(--text-color);
     padding: 12px 20px;
     border-radius: 8px;
     font-weight: 600;
@@ -255,70 +234,96 @@ button:hover {
     box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
 }
 
-section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
+.senha-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
 }
 
+.senha-container input {
+    flex-grow: 1;
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    max-width: 300px;
+}
+
+/* =========================
+   PRODUTOS
+========================= *//* Produtos */
+.produtos {
+    padding: 2rem;
+}
 .grid-produtos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
 }
-
 .produto-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    padding: 1rem;
     text-align: center;
-    transition: transform 0.3s;
+    border-radius: 8px;
 }
-
-.produto-card:hover {
-    transform: scale(1.05);
-}
-
 .produto-card img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
 }
-
-.produto-card h3 {
-    margin: 10px 0;
-}
-
-.produto-card p {
-    color: #555;
-    font-size: 14px;
-}
-
 .produto-card button {
-    background-color: #0055aa;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #0d6efd;
     color: white;
     border: none;
-    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
 }
-
 .produto-card button:hover {
-    background-color: #003f7d;
+    background: #084298;
 }
 
-.carrossel, .outra-sessao {
-    background-color: #e2e2e2;
+/* Carrinho */
+.carrinho-section {
+    padding: 2rem;
+}
+.carrinho-itens {
+    margin-bottom: 2rem;
+}
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+}
+.btn-finalizar {
+    background-color: green;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Carrinho */
+.carrinho-section { padding:2rem; }
+.carrinho-itens .item-carrinho {
+  display:flex; justify-content:space-between;
+  padding:0.5rem 0; border-bottom:1px solid #ccc;
+}
+.btn-finalizar {
+  background: var(--success-color); color:white;
+  padding:0.75rem 1.5rem; border:none; border-radius:5px;
+  cursor:pointer;
 }
 
-.outra-sessao {
-    padding: 30px;
-    border-radius: 10px;
-}
 
+/* =========================
+   DEPOIMENTOS
+========================= */
 .depoimentos {
     display: flex;
     gap: 20px;
@@ -331,7 +336,7 @@ section {
     border-radius: 8px;
     padding: 20px;
     max-width: 300px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -341,6 +346,32 @@ section {
     margin: 10px 0;
 }
 
+/* =========================
+   OUTRAS SESSÕES
+========================= */
+.carrossel,
+.outra-sessao {
+    background-color: #e2e2e2;
+}
+
+.outra-sessao {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #42474b;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
 @media (max-width: 900px) {
     .grid-produtos {
         grid-template-columns: repeat(2, 1fr);
@@ -355,11 +386,11 @@ section {
 }
 
 @media (max-width: 600px) {
-    .hero-content h1 {
+    .inicio-div h1 {
         font-size: 2.5rem;
     }
 
-    .hero-content p {
+    .inicio-div p {
         font-size: 1.1rem;
     }
 
@@ -371,5 +402,3 @@ section {
         max-width: 100%;
     }
 }
-
-

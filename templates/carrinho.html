@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
-
 {% block title %}Carrinho{% endblock %}
-
 {% block content %}
-<section>
-    <h2>Seu Carrinho</h2>
-    <p>Você ainda não adicionou produtos.</p>
+<section class="carrinho-section">
+  <h2>Seu Carrinho</h2>
+  <div class="carrinho-itens"></div>
+  <p class="carrinho-vazio" style="display:none;">Seu carrinho está vazio.</p>
+  <div class="carrinho-resumo" style="display:none;">
+    <p><strong>Total:</strong> <span id="carrinho-total">R$ 0,00</span></p>
+  </div>
 </section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/carrinho.js') }}"></script>
 {% endblock %}
