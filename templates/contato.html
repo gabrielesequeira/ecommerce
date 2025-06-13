@@ -4,13 +4,8 @@
 
 {% block content %}
 <section class="contato-section">
-    <h2>Entre em contato conosco</h2>
-
-    {% if enviado %}
-        <p class="success">Mensagem enviada com sucesso!</p>
-    {% endif %}
-
-    <form method="POST" class="form-contato">
+    <h2>Entre em contato</h2>
+    <form method="POST" class="contato-form">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" placeholder="Seu nome completo" required>
 

@@ -12,9 +12,9 @@
     --success-color: #28a745;         
 }
 
-/* =========================
-   BASE E TIPOGRAFIA
-========================= */
+/* =============
+   base.html
+================ */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -27,9 +27,21 @@ h1, h2 {
     color: var(--primary-color);
 }
 
-/* =========================
-   HEADER E NAVEGAÇÃO
-========================= */
+main {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: #42474b;
+    border-radius: 8px;
+}
+
+section {
+    margin: 0;
+    padding: 0px;
+    background-color: #42474b;
+    border-radius: 8px;
+}
+
 header {
     background-color: #004080;
     color: var(--text-color);
@@ -49,30 +61,11 @@ nav a {
 }
 
 /* =========================
-   PRINCIPAL E SEÇÕES
-========================= */
-main {
-    max-width: 800px;
-    margin: 1rem auto;
-    padding: 1rem;
-    background: #42474b;
-    border-radius: 8px;
-}
-
-section {
-    margin: 0;
-    padding: 0px;
-    background-color: #42474b;
-    border-radius: 8px;
-}
-
-/* =========================
    inicio.html
 ========================= */
 .inicio-section {
     height: 50vh;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,19 +84,20 @@ section {
     margin-bottom: 20px;
     font-weight: 900;
     line-height: 1.1;
+    color: var(--text-color)
 }
 
 .inicio-div p {
     font-size: 1.3rem;
     margin-bottom: 40px;
-    color: #d1d9e6cc;
+    color: var(--text-color);
     font-weight: 500;
 }
 
 /* =========================
    BOTÕES
 ========================= */
-.btn-primary,
+.inicio-div a,
 .btn-enviar,
 button {
     cursor: pointer;
@@ -113,7 +107,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-.btn-primary {
+.inicio-div a {
     background-color: var(--accent-color);
     color: white;
     padding: 15px 45px;
@@ -125,7 +119,7 @@ button {
     border-radius: 50px;
 }
 
-.btn-primary:hover {
+.inicio-div a:hover {
     background-color: #e85b4d;
     transform: scale(1.05);
 }
@@ -159,28 +153,24 @@ button:hover {
 /* =========================
    CONTATO
 ========================= */
-.form-contato,
-.form-section form {
+.contato-form {
     display: flex;
     flex-direction: column;
     gap: 18px;
     font-family: inherit;
 }
 
-.form-contato label,
-.form-section label {
+.contato-form label {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 6px;
     color: var(--text-color);
 }
 
-.form-contato input[type="text"],
-.form-contato input[type="email"],
-.form-contato input[type="password"],
-.form-contato textarea,
-.form-section input[type="email"],
-.form-section input[type="password"] {
+.contato-form input[type="text"],
+.contato-form input[type="email"],
+.contato-form input[type="password"],
+.contato-form textarea{
     padding: 12px 15px;
     border: 2px solid var(--input-border);
     border-radius: 8px;
@@ -194,21 +184,17 @@ button:hover {
     box-sizing: border-box;
 }
 
-.form-contato input:focus,
-.form-contato textarea:focus,
-.form-section input:focus {
+.contato-form input:focus,
+.contato-form textarea:focus{
     border-color: var(--primary-color);
     box-shadow: 0 0 8px var(--primary-color);
     outline: none;
 }
 
-/* =========================
-   CONTATO
-========================= */
 .contato-section {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px 30px;
     background-color: var(--background-color);
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -223,69 +209,80 @@ button:hover {
     font-weight: 700;
 }
 
-.success {
-    background-color: var(--success-color);
-    color: var(--text-color);
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.4);
-}
-
-.senha-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    gap: 10px;
-}
-
-.senha-container input {
-    flex-grow: 1;
-    border: none;
-    color: var(--text-color);
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    max-width: 300px;
-}
-
 /* =========================
    PRODUTOS
-========================= *//* Produtos */
-.produtos {
-    padding: 2rem;
+=========================*/
+
+
+.produto-section {
+    padding: 20px 30px;
+    background-color: var(--background-color);
 }
-.grid-produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-}
-.produto-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
+
+.produto-section h2 {
     text-align: center;
-    border-radius: 8px;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--text-color);
 }
+
+.produto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+}
+
 .produto-card img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: contain;
+    background-color: white;
+    padding: 10px;
 }
-.produto-card button {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: #0d6efd;
+
+
+.produto-card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.4em;
+    color: var(--primary-color);
+}
+
+.produto-card p {
+    padding: 0 15px;
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.produto-card button{
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
+
 .produto-card button:hover {
-    background: #084298;
+    background-color: #e85c50;
 }
+
 
 /* Carrinho */
 .carrinho-section {
@@ -401,4 +398,57 @@ footer {
     .senha-container input {
         max-width: 100%;
     }
+}
+
+
+.login-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-input {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.login-button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #e65a50;
 }
