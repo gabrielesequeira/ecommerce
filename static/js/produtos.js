@@ -1,20 +1,41 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.produto-card').forEach((card, inicio) => {
-        const nome = card.querySelector('h3').innerText;
-        const descricao = card.querySelector('p').innerText;
-        const img = card.querySelector('img').getAttribute('src');
-        const preco = 29.90 + inicio * 10; // só para teste
+// produtos.js
 
-        card.querySelector('button').addEventListener('click', () => {
-            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+document.addEventListener("DOMContentLoaded", () => {
+  const botoes = document.querySelectorAll(".produto-card button");
 
-            // adiciona produto
-            carrinho.push({ nome, descricao, preco, img });
+  botoes.forEach((botao, index) => {
+    botao.addEventListener("click", () => {
+      const card = botao.closest(".produto-card");
+      const nome = card.querySelector("h3").innerText;
+      const descricao = card.querySelector("p").innerText;
+      const imagem = card.querySelector("img").src;
+      const preco = 49.90 + index * 10; // Exemplo de preço fictício (pode vir do backend depois)
 
-            // salva no localStorage
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      const produto = {
+        id: index + 1,
+        nome,
+        descricao,
+        imagem,
+        preco,
+        quantidade: 1
+      };
 
-            alert(`${nome} adicionado ao carrinho!`);
-        });
+      adicionarAoCarrinho(produto);
     });
+  });
+
+  function adicionarAoCarrinho(produto) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    const index = carrinho.findIndex(p => p.id === produto.id);
+
+    if (index !== -1) {
+      carrinho[index].quantidade += 1;
+    } else {
+      carrinho.push(produto);
+    }
+
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
+    alert(`${produto.nome} foi adicionado ao carrinho.`);
+  }
 });

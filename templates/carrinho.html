@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
+
 {% block title %}Carrinho{% endblock %}
+
 {% block content %}
 <section class="carrinho-section">
-  <h2>Seu Carrinho</h2>
+  <h2 class="carrinho-h2">Seu Carrinho</h2>
+
   <div class="carrinho-itens"></div>
-  <p class="carrinho-vazio" style="display:none;">Seu carrinho está vazio.</p>
-  <div class="carrinho-resumo" style="display:none;">
-    <p><strong>Total:</strong> <span id="carrinho-total">R$ 0,00</span></p>
+
+  <p class="carrinho-vazio" style="display: none;">Seu carrinho está vazio.</p>
+
+  <div class="carrinho-resumo" style="display: none;">
+    <h3>Total: <span id="carrinho-total">R$ 0,00</span></h3>
+    <button onclick="limparCarrinho()" class="btn-limpar">Esvaziar Carrinho</button>
   </div>
 </section>
 
-{% endblock %}
-{% block scripts %}
 <script src="{{ url_for('static', filename='js/carrinho.js') }}"></script>
+<script>
+  function limparCarrinho() {
+    localStorage.removeItem("carrinho");
+    location.reload();
+  }
+</script>
 {% endblock %}

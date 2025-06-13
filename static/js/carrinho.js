@@ -1,36 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.carrinho-itens');
-    const vazio = document.querySelector('.carrinho-vazio');
-    const resumo = document.querySelector('.carrinho-resumo');
-    const totalElement = document.getElementById('carrinho-total');
+// carrinho.js
 
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+document.addEventListener("DOMContentLoaded", () => {
+  const containerItens = document.querySelector(".carrinho-itens");
+  const textoVazio = document.querySelector(".carrinho-vazio");
+  const resumo = document.querySelector(".carrinho-resumo");
+  const totalSpan = document.getElementById("carrinho-total");
 
-    if (carrinho.length === 0) {
-        vazio.style.display = 'block';
-        resumo.style.display = 'none';
-        return;
-    }
+  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-    let total = 0;
+  if (carrinho.length === 0) {
+    textoVazio.style.display = "block";
+    resumo.style.display = "none";
+    return;
+  }
 
-    carrinho.forEach(item => {
-        const card = document.createElement('div');
-        card.classList.add('item-carrinho');
+  textoVazio.style.display = "none";
+  resumo.style.display = "block";
 
-        card.innerHTML = `
-            <img src="${item.img}" alt="${item.nome}" width="80">
-            <div>
-                <h4>${item.nome}</h4>
-                <p>${item.descricao}</p>
-                <p><strong>R$ ${item.preco.toFixed(2)}</strong></p>
-            </div>
-        `;
+  let total = 0;
 
-        container.appendChild(card);
-        total += item.preco;
-    });
+  carrinho.forEach(produto => {
+    const div = document.createElement("div");
+    div.classList.add("item-carrinho");
 
-    totalElement.textContent = `R$ ${total.toFixed(2)}`;
-    resumo.style.display = 'block';
+    const subtotal = produto.preco * produto.quantidade;
+    total += subtotal;
+
+    div.innerHTML = `
+      <div class="carrinho-item">
+        <img src="${produto.imagem}" alt="${produto.nome}" width="100">
+        <div>
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+          <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
+          <p>Quantidade: ${produto.quantidade}</p>
+          <p>Subtotal: R$ ${subtotal.toFixed(2)}</p>
+        </div>
+      </div>
+    `;
+
+    containerItens.appendChild(div);
+  });
+
+  totalSpan.textContent = `R$ ${total.toFixed(2)}`;
 });
