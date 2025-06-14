@@ -8,7 +8,7 @@
 
   <div class="carrinho-itens"></div>
 
-  <p class="carrinho-vazio" style="display: none;">Seu carrinho está vazio.</p>
+    <p class="carrinho-vazio" style="display: none;">Seu carrinho está vazio.</p>
 
   <div class="carrinho-resumo" style="display: none;">
     <h3>Total: <span id="carrinho-total">R$ 0,00</span></h3>
@@ -17,10 +17,4 @@
 </section>
 
 <script src="{{ url_for('static', filename='js/carrinho.js') }}"></script>
-<script>
-  function limparCarrinho() {
-    localStorage.removeItem("carrinho");
-    location.reload();
-  }
-</script>
 {% endblock %}

@@ -9,7 +9,6 @@
     --text-color: #dadcec;            
     --input-background: #3f3232;      
     --input-border: #423737;          
-    --success-color: #28a745;         
 }
 
 /* =============
@@ -150,6 +149,22 @@ button:hover {
     background-color: #0055aa;
 }
 
+.btn-limpar {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-limpar:hover {
+  background-color: #e05245;
+}
+
 /* =========================
    CONTATO
 ========================= */
@@ -284,26 +299,10 @@ button:hover {
 }
 
 
-/* Carrinho */:root {
-  --primary-color: #8db8e2;
-  --secondary-color: #1e1e2f;
-  --accent-color: #ff6f61;
-  --background-color: #2e343d;
-  --text-color: #dadcec;
-  --input-background: #3f3232;
-  --input-border: #423737;
-  --success-color: #28a745;
-}
+/* =========================
+   PRODUTOS
+=========================*/
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Seção principal */
 .carrinho-section {
   padding: 2rem;
   max-width: 900px;
@@ -319,7 +318,6 @@ body {
   text-align: center;
 }
 
-/* Itens do carrinho */
 .carrinho-itens {
   display: flex;
   flex-direction: column;
@@ -350,7 +348,6 @@ body {
   margin: 0.3rem 0;
 }
 
-/* Texto de carrinho vazio */
 .carrinho-vazio {
   text-align: center;
   font-size: 1.2rem;
@@ -358,41 +355,22 @@ body {
   color: var(--text-color);
 }
 
-/* Resumo e total */
 .carrinho-resumo {
   margin-top: 2rem;
   text-align: right;
   padding: 1rem;
-  background-color: var(--secondary-color);
-  border-radius: 8px;
-  box-shadow: 0 0 5px #00000030;
+
 }
 
 .carrinho-resumo h3 {
   font-size: 1.5rem;
-  color: var(--success-color);
+  color: var(--text-color);
 }
 
 #carrinho-total {
   font-weight: bold;
 }
 
-/* Botão de esvaziar carrinho */
-.btn-limpar {
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn-limpar:hover {
-  background-color: #e05245;
-}
 
 /* Responsivo */
 @media (max-width: 600px) {

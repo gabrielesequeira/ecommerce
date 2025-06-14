@@ -5,47 +5,107 @@
 <section class="produto-section">
   <h2>Nossos Produtos</h2>
   <div class="produto-grid">
-    
+
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img1.jpg') }}" alt="Produto 1">
       <h3>Produto 1</h3>
-      <p>Descrição do produto 1. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 1049.90</p>
+      <p class="descricao">Descrição do produto 1. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="1" 
+        data-nome="Produto 1" 
+        data-preco="1049.90"
+        data-descricao="Descrição do produto 1. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img1.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img2.jpg') }}" alt="Produto 2">
       <h3>Produto 2</h3>
-      <p>Descrição do produto 2. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 1340.90</p>
+      <p class="descricao">Descrição do produto 2. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="2" 
+        data-nome="Produto 2" 
+        data-preco="1340.90"
+        data-descricao="Descrição do produto 2. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img2.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img3.jpg') }}" alt="Produto 3">
       <h3>Produto 3</h3>
-      <p>Descrição do produto 3. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 1566.99</p>
+      <p class="descricao">Descrição do produto 3. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="3" 
+        data-nome="Produto 3" 
+        data-preco="1566.99"
+        data-descricao="Descrição do produto 3. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img3.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img4.jpg') }}" alt="Produto 4">
       <h3>Produto 4</h3>
-      <p>Descrição do produto 4. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 4555.90</p>
+      <p class="descricao">Descrição do produto 4. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="4" 
+        data-nome="Produto 4" 
+        data-preco="4555.90"
+        data-descricao="Descrição do produto 4. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img4.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img5.jpg') }}" alt="Produto 5">
       <h3>Produto 5</h3>
-      <p>Descrição do produto 5. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 10060.90</p>
+      <p class="descricao">Descrição do produto 5. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="5" 
+        data-nome="Produto 5" 
+        data-preco="10060.90"
+        data-descricao="Descrição do produto 5. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img5.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
     <div class="produto-card">
       <img src="{{ url_for('static', filename='img/img6.jpg') }}" alt="Produto 6">
       <h3>Produto 6</h3>
-      <p>Descrição do produto 6. Um item de alta qualidade para você!</p>
-      <button>Adicionar ao carrinho</button>
+      <p class="preco">R$ 24949.90</p>
+      <p class="descricao">Descrição do produto 6. Um item de alta qualidade para você!</p>
+      <button 
+        class="btn-adicionar" 
+        data-id="6" 
+        data-nome="Produto 6" 
+        data-preco="24949.90"
+        data-descricao="Descrição do produto 6. Um item de alta qualidade para você!"
+        data-imagem="{{ url_for('static', filename='img/img6.jpg') }}"
+      >
+        Adicionar ao carrinho
+      </button>
     </div>
 
   </div>
