@@ -1,8 +1,8 @@
-# 🖥️E-commerce de computadores
+# E-commerce de computadores
 
 Um projeto de e-commerce funcional para venda de computadores e acessórios, desenvolvido com Python (Flask), HTML, CSS e JavaScript. O objetivo é simular uma loja online completa com páginas dinâmicas e coleta pro carrinho.
 
-## 🌐 Funcionalidades
+## Funcionalidades
 
 - Página inicial com destaques e direcionada a página produtos  
 - Listagem de produtos com botões de compra  
@@ -10,7 +10,7 @@ Um projeto de e-commerce funcional para venda de computadores e acessórios, des
 - Formulário de contato  
 - Página de login simples (template estático)
 
-## 📁 Estrutura de Páginas
+## Estrutura de Páginas
 
 1. **Início** – Apresentação do e-commerce e banners promocionais  
 2. **Produtos** – Cards de produtos com botão “Comprar”  
@@ -18,7 +18,7 @@ Um projeto de e-commerce funcional para venda de computadores e acessórios, des
 4. **Contato** – Formulário de contato para clientes  
 5. **Login** – Página de autenticação
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Backend:** Python 3.x + Flask  
 - **Frontend:** HTML5, CSS3, JavaScript  
@@ -28,6 +28,7 @@ Um projeto de e-commerce funcional para venda de computadores e acessórios, des
 
 ## 🚀 Como rodar o projeto localmente
 
+```bash
 -**Crie um ambiente virtual**
 python -m venv venv
 source venv/bin/activate      # Linux/Mac
