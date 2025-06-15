@@ -43,9 +43,10 @@ python app.py
 -**Acesse o projeto**
 http://127.0.0.1:5000
 
-
+```
 ### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/gabrielesequeira/ecommerce.git
 cd ecommerce
+```
