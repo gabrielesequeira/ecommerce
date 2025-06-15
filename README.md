@@ -26,7 +26,7 @@ Um projeto de e-commerce funcional para venda de computadores e acessórios, des
 - **Armazenamento de dados:** localmente via `localStorage`
 - **Controle de versões:** Git + GitHub
 
-## 🚀 Como rodar o projeto localmente
+## Como rodar o projeto localmente
 
 ```bash
 -Crie um ambiente virtual
