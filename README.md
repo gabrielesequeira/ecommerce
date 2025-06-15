@@ -1,89 +1,50 @@
-# E-commerce
-## Descrição do Sistema
+# 🖥️E-commerce de computadores
 
-### Um e-commerce onde os usuários podem:
-- Navegar por categorias de produtos.
-- Adicionar e remover itens do carrinho.
-- Finalizar compras.
-- Pesquisar produtos por nome.
-- Ver recomendações personalizadas.
+Um projeto de e-commerce funcional para venda de computadores e acessórios, desenvolvido com Python (Flask), HTML, CSS e JavaScript. O objetivo é simular uma loja online completa com páginas dinâmicas e coleta pro carrinho.
 
-### Componentes Essenciais
+## 🌐 Funcionalidades
 
-- Banco de Dados Simulado (Estruturas de Dados)
-- Interface do Usuário (Front-end)
-- Lógica de Negócio (Back-end)
-- Algoritmos de Busca e Recomendação
+- Página inicial com destaques e direcionada a página produtos  
+- Listagem de produtos com botões de compra  
+- Carrinho dinâmico com persistência de dados via `localStorage`  
+- Formulário de contato  
+- Página de login simples (template estático)
 
-### Arquivos do Projeto e Tecnologias / Conceitos Usados
+## 📁 Estrutura de Páginas
 
-1. backend/app.py
-Descrição: É o ponto de entrada para o back-end, gerencia o servidor Flask e inicializa a aplicação.
-Tecnologias Usadas:
-Flask: Framework para construir aplicações web no back-end.
-Conceitos Usados:
-Arquitetura cliente-servidor.
-Roteamento de URLs para lidar com diferentes solicitações (ex.: /products, /cart).
-APIs RESTful para a comunicação entre front-end e back-end.
-2. backend/database.py
-Descrição: Configura o banco de dados da aplicação, incluindo a conexão e operações básicas.
-Tecnologias Usadas:
-SQLAlchemy (ou qualquer ORM): Facilita a interação entre o código Python e o banco de dados.
-Conceitos Usados:
-Persistência de dados.
-Modelo relacional, organizando informações como usuários, produtos e pedidos em tabelas.
-Estruturas de dados (listas e dicionários, para simulações locais).
-3. backend/models.py
-Descrição: Define os modelos (classes) que representam as tabelas do banco de dados.
-Tecnologias Usadas:
-SQLAlchemy ou similar para mapear modelos Python em tabelas.
-Conceitos Usados:
-Mapeamento Objeto-Relacional (ORM) para vincular classes Python a tabelas no banco de dados.
-Estruturas de dados, como listas e dicionários, para representar registros em memória.
-4. backend/routes.py
-Descrição: Define as rotas da API, conectando as requisições do cliente à lógica do back-end, onde as informações serão enviadas em formato JSON visto que é de facil manipulação em JavaScript
-Tecnologias Usadas:
-Flask (Blueprints para modularizar rotas).
-Conceitos Usados:
-APIs RESTful para comunicação eficiente entre front-end e back-end.
-Lógica de controle para validar e processar requisições.
-5. backend/init.py
-Descrição: Faz o diretório backend ser reconhecido como um módulo Python, permitindo importações organizadas.
-Tecnologias Usadas:
-Python.
-Conceitos Usados:
-Modularidade no desenvolvimento de software.
-6. frontend/index.html
-Descrição: Define a estrutura da interface visual principal do e-commerce.
-Tecnologias Usadas:
-HTML.
-Conceitos Usados:
-Semântica e organização para uma experiência de navegação clara.
-Conexão com os arquivos CSS e JavaScript para estilização e funcionalidade.
-7. frontend/styles.css
-Descrição: Estiliza os elementos visuais da página, controlando layout, cores e fontes.
-Tecnologias Usadas:
-CSS.
-Conceitos Usados:
-Box Model para organização de elementos.
-Responsividade com Media Queries.
-Design visual para melhorar a experiência do usuário.
-8. frontend/app.js
-Descrição: Gerencia a lógica do lado do cliente, como eventos de cliques, chamadas para a API e manipulação do DOM.
-Tecnologias Usadas:
-JavaScript.
-Conceitos Usados:
-Manipulação de eventos e DOM para criar uma interface interativa.
-Comunicação assíncrona com o back-end usando Fetch API ou Axios.
-9. .gitignore
-Descrição: Lista arquivos e diretórios que não devem ser enviados ao repositório Git.
-Tecnologias Usadas:
-Git.
-Conceitos Usados:
-Boas práticas de controle de versão, ignorando arquivos desnecessários como configurações locais, caches e bibliotecas instaladas.
-10. requirements.txt
-Descrição: Lista as bibliotecas necessárias para rodar a aplicação.
-Tecnologias Usadas:
-Python (pip para gerenciar dependências).
-Conceitos Usados:
-Gerenciamento de dependências para garantir consistência entre os ambientes de desenvolvimento e produção.
+1. **Início** – Apresentação do e-commerce e banners promocionais  
+2. **Produtos** – Cards de produtos com botão “Comprar”  
+3. **Carrinho** – Produtos adicionados e valor total  
+4. **Contato** – Formulário de contato para clientes  
+5. **Login** – Página de autenticação
+
+## ⚙️ Tecnologias Utilizadas
+
+- **Backend:** Python 3.x + Flask  
+- **Frontend:** HTML5, CSS3, JavaScript  
+- **Templates:** Jinja2 (via Flask)  
+- **Armazenamento de dados:** localmente via `localStorage`
+- **Controle de versões:** Git + GitHub
+
+## 🚀 Como rodar o projeto localmente
+
+-**Crie um ambiente virtual**
+python -m venv venv
+source venv/bin/activate      # Linux/Mac
+venv\Scripts\activate         # Windows
+
+-**Instale as dependências**
+pip install -r requitements.txt
+
+-**Execute o servidor Flask** 
+python app.py
+
+-**Acesse o projeto**
+http://127.0.0.1:5000
+
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/gabrielesequeira/ecommerce.git
+cd ecommerce
