@@ -29,18 +29,18 @@ Um projeto de e-commerce funcional para venda de computadores e acessórios, des
 ## 🚀 Como rodar o projeto localmente
 
 ```bash
--**Crie um ambiente virtual**
+-Crie um ambiente virtual
 python -m venv venv
 source venv/bin/activate      # Linux/Mac
 venv\Scripts\activate         # Windows
 
--**Instale as dependências**
+-Instale as dependências
 pip install -r requitements.txt
 
--**Execute o servidor Flask** 
+-Execute o servidor Flask 
 python app.py
 
--**Acesse o projeto**
+-Acesse o projeto
 http://127.0.0.1:5000
 
 ```
